@@ -1,8 +1,8 @@
  
-    window.addEventListener("click",console.log("hi"));
-    document.getElementById('RDiv').addEventListener("click", scrlR);
-    document.getElementById('GDiv').addEventListener("click", scrlG);
-    document.getElementById('BDiv').addEventListener("click", scrlB);
+    document.getElementById('RDiv').addEventListener("onMouseDrag", console.log('r'));
+    document.getElementById('RDiv').addEventListener("ondragstart ", scrlR);
+    document.getElementById('GDiv').addEventListener("onMouseDrag", scrlG);
+    document.getElementById('BDiv').addEventListener("onMouseDrag", scrlB);
 
     document.getElementById('numR').addEventListener("onchang", change);
     document.getElementById('numG').addEventListener("onchang", change);
@@ -30,9 +30,11 @@
         bigDiv = document.getElementById("RDiv");
         
         pos1= e.clientX;
-        if (pos1>0 && pos1 <= 255){
+        console.log(bigDiv.offsetLeft);
+        console.log(pos1);
+        if (pos1>=bigDiv.offsetLeft && pos1 <= bigDiv.offsetLeft+255){
         elmnt.style.left = ( pos1 - bigDiv.offsetLeft) + "px";
-        document.getElementById('numR').value=pos1
+        document.getElementById('numR').value=pos1-bigDiv.offsetLeft;
         change();
         }
     }
@@ -41,12 +43,10 @@
         pos1= e.clientX;
         elmnt = document.getElementById("scrollG");
         bigDiv = document.getElementById("GDiv");
-        document.getElementById('numG').value=pos1
-
-        
         pos1= e.clientX;
-        if (pos1>0 && pos1 <= 255){
+        if (pos1>bigDiv.offsetLeft && pos1 <= bigDiv.offsetLeft+255){
         elmnt.style.left = ( pos1 - bigDiv.offsetLeft) + "px";
+        document.getElementById('numG').value=pos1-bigDiv.offsetLeft
         change();
         }
     }
@@ -55,9 +55,9 @@
         elmnt = document.getElementById("scrollB");
         bigDiv = document.getElementById("BDiv");
         pos1= e.clientX;{
-        if (pos1>0 && pos1 <= 255)
+        if (pos1>bigDiv.offsetLeft && pos1 <=bigDiv.offsetLeft+ 255)
         elmnt.style.left = ( pos1 - bigDiv.offsetLeft) + "px";
-        document.getElementById('numB').value=pos1
+        document.getElementById('numB').value=pos1-bigDiv.offsetLeft
 
         change();
         }

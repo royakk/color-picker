@@ -1,32 +1,42 @@
-.container{
+/* .container{
     display: grid;
+    grid-template-columns: 1fr 1fr;
     grid-gap: 20px;
-}
+} */
+/* .color{
+    float: left;
+} */
+/* .container{
+    display: flex;
+} */
+
 .R{
-    position: relative;
+    position: absolute;
+    left: 200px;
+    top:20px;
     width: 250px;
     background-color: red;
     height: 15px;
     margin-top: 5px;    
 }
 .G{
-    position: relative;
+    position: absolute;
+    left: 200px;
+    top: 60px;
     width: 250px;
     background-color:green;
     height: 15px;
     margin-top: 5px;
 
-    
-
 }
 .B{
-    position: relative;
+    position: absolute;
     width: 250px;
+    left: 200px;
+    top: 100px;
     background-color: blue;
     height: 15px;
     margin-top: 5px;
-    
-
 }
 
 #numR,#numG,#numB,#Red,#Green,#Blue{
@@ -40,7 +50,6 @@
     border-radius: 50%;
     cursor: pointer;
 }
-
 
 #lable1{
     
